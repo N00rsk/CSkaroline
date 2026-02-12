@@ -3,233 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAROLINE | OFFISIELL HALLO??!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Karoline "The Clutch" Alvilde | CS:GO Legend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00f2ff;
-            --secondary: #7000ff;
-            --accent: #ff0055;
-            --bg: #0a0a0c;
+            --cs-orange: #de9b35;
+            --cs-blue: #5d79ae;
+            --dark-gray: #121417;
+            --danger: #ff4444;
         }
 
         body {
-            background-color: var(--bg);
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-gray);
+            color: #e1e1e1;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('karoline.png');
+        /* Hero Seksjon med Glitch */
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('karoline.png'); /* Offline screen som bakgrunn */
             background-size: cover;
-            background-position: center;
-            height: 100vh;
+            background-attachment: fixed;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            border-bottom: 5px solid var(--secondary);
-        }
-
-        .badge {
-            background: var(--accent);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 85, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 0, 85, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 85, 0); }
+            border-bottom: 4px solid var(--cs-orange);
         }
 
         h1 {
-            font-size: 5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            color: var(--cs-orange);
             margin: 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             text-transform: uppercase;
-            font-weight: 900;
+            letter-spacing: 5px;
+            animation: hallo-pulse 1s infinite alternate;
         }
 
-        .main-container {
-            max-width: 1200px;
-            margin: -100px auto 50px auto;
-            background: rgba(20, 20, 25, 0.95);
-            border-radius: 15px;
+        @keyframes hallo-pulse {
+            from { text-shadow: 0 0 10px #de9b35; }
+            to { text-shadow: 0 0 30px #de9b35, 0 0 40px #ff0000; }
+        }
+
+        .sub-tag {
+            font-size: 1.2rem;
+            background: var(--danger);
+            padding: 5px 20px;
+            transform: skewX(-20deg);
+            font-weight: bold;
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            background: #1b1e23;
             padding: 40px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            position: relative;
-            z-index: 10;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .grid {
+        .cs-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            gap: 30px;
         }
 
-        .pro-img-wrapper {
+        .stat-box {
+            border: 1px solid #333;
+            padding: 20px;
+            background: #23272d;
             position: relative;
         }
 
-        .pro-img {
-            width: 100%;
-            border-radius: 10px;
-            border-left: 8px solid var(--primary);
-            filter: grayscale(20%) contrast(110%);
+        .stat-box h3 {
+            color: var(--cs-orange);
+            margin-top: 0;
+            font-family: 'Orbitron', sans-serif;
         }
 
-        .bio-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ccc;
-        }
-
-        .ironic-quote {
-            font-style: italic;
-            color: var(--primary);
-            border-left: 3px solid var(--primary);
+        .highlight-box {
+            border-left: 5px solid var(--cs-blue);
             padding-left: 20px;
             margin: 20px 0;
+            font-style: italic;
+            background: rgba(93, 121, 174, 0.1);
         }
 
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
+        .pro-player-card {
+            width: 100%;
+            border: 2px solid #de9b35;
+            filter: sepia(0.5) contrast(1.2);
         }
 
-        .stat-card {
-            background: #1a1a20;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            transition: 0.3s;
+        /* Knapper */
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
         }
 
-        .stat-card:hover {
-            border-color: var(--secondary);
-            transform: translateY(-5px);
-        }
-
-        .stat-value {
-            display: block;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #777;
-        }
-
-        .twitch-btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: var(--secondary);
-            color: white;
+        .btn {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
         }
 
-        .twitch-btn:hover {
-            background: #8a2be2;
-            box-shadow: 0 0 20px var(--secondary);
-        }
+        .btn-hallo { background: var(--cs-orange); color: black; }
+        .btn-hade { background: #333; color: white; }
+        .btn-hade:hover { background: var(--danger); }
 
-        .trigger-warning {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            color: #444;
-            border-top: 1px solid #222;
-            padding-top: 20px;
-        }
-
-        footer {
-            padding: 50px;
+        .fake-news {
+            font-size: 0.7rem;
+            color: #555;
             text-align: center;
-            color: #333;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <div class="badge">E-Sport Legende</div>
-        <h1>Karoline Alvilde</h1>
-        <p>28 år med ren dominans | Profesjonell Cozy-Gamer</p>
+    <div class="header">
+        <p class="sub-tag">LIVE: MAJOR FINALS (NOT REALLY)</p>
+        <h1>HALLOOOO!</h1>
     </div>
 
-    <div class="main-container">
-        <div class="grid">
-            <div class="pro-img-wrapper">
-                <img src="karoline1.png" alt="Karoline med våpen" class="pro-img">
-            </div>
-            <div class="bio-text">
-                <h2>Om "The Destroyer" Karoline</h2>
-                <p>
-                    Møt Norges mest fryktede spill-ikon. Karoline (28) har spesialisert seg på 
-                    høyrisiko-operasjoner i <strong>Palia</strong> og taktisk blomsterplukking i 
-                    <strong>Minecraft</strong>. Hennes mekaniske ferdigheter i <strong>Fortnite</strong> 
-                    er så avanserte at de fleste tror hun bruker kontroller – selv når hun ikke gjør det.
-                </p>
-                <div class="ironic-quote">
-                    "God stemning er ikke et valg, det er en ordre. Hvis ikke, blir det Phasmophobia."
+    <div class="main-content">
+        <div class="cs-grid">
+            <div>
+                <img src="karoline1.png" alt="CS GOAT" class="pro-player-card">
+                <div class="btn-container">
+                    <button class="btn btn-hallo" onclick="alert('HALLOOOOOO?! Hører du meg ikke?!')">SI HALLO</button>
+                    <button class="btn btn-hade" onclick="alert('Systemfeil: Tvangstanker aktivert. Kan ikke avslutte stream.')">SI HADE</button>
                 </div>
-                <p>
-                    Når Karoline ikke eliminerer spøkelser med ren viljestyrke, bruker hun tiden sin på 
-                    å perfeksjonere kunsten å se profesjonell ut mens hun egentlig bare leter etter 
-                    veien ut av spawn i Minecraft.
+            </div>
+
+            <div>
+                <h2>Spiller-profil: Karoline</h2>
+                <p><strong>Rolle:</strong> Entry Fragger / Golf-Sniper</p>
+                <div class="highlight-box">
+                    "Karoline er uten tvil min favoritt CS-streamer. Ingen andre klarer å holde et sikte så stødig mens de egentlig spiller Golf With Your Friends eller bygger et kjøkken i Palia."
+                </div>
+                
+                <div class="stat-box">
+                    <h3>Sesong Stats</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>🎯 <strong>Headshot Rate:</strong> 100% (I Minecraft)</li>
+                        <li>⛳ <strong>Clutch Prosent:</strong> 0.02% (Når ballen er nær hullet)</li>
+                        <li>🔊 <strong>Desibel-nivå:</strong> Over smertegrensen</li>
+                        <li>🔫 <strong>Favorittvåpen:</strong> AI-generert AK / Vannkanne</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top:20px;">
+                    Mange lurer på hvorfor Karoline viser "Offline"-skjermen midt i en runde. Ekspertene mener det er en taktisk genistrek for å forvirre motstanderne (og seerne) mens hun tar en Monster-pause.
                 </p>
-                <a href="https://www.twitch.tv/karoline_alvilde" class="twitch-btn">Se Eliten Live</a>
             </div>
         </div>
 
-        <div class="stats-container">
-            <div class="stat-card">
-                <span class="stat-value">99%</span>
-                <span class="stat-label">Sjanse for panikk-skrik i Phasmophobia</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value">0.00ms</span>
-                <span class="stat-label">Reaksjonstid på "Hade" i chat</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value">∞</span>
-                <span class="stat-label">Timer brukt på å dekorere hus i Palia</span>
-            </div>
+        <div class="stat-box" style="margin-top: 30px; text-align: center;">
+            <h2 style="color: var(--cs-blue);">"SÅ FLINK DU ER I CS!"</h2>
+            <p>Akkurat nå dominerer hun lobbyen med taktisk golfball-plassering som ville gjort Astralis misunnelige.</p>
         </div>
 
-        <div class="trigger-warning">
-            <p><strong>VIKTIG MELDING:</strong> Å skrive "Hade" i chatten regnes som et psykologisk angrep og vil bli besvart med umiddelbar forvirring og tvangstanker. Siden er 100% seriøs, akkurat som Karolines sikte med en AI-generert AK-47.</p>
+        <div class="fake-news">
+            * Denne siden er sponset av Karolines manglende retningssans i Minecraft. <br>
+            * Advarsel: Ved å si "Hade" godtar du at streamen aldri faktisk slutter.
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 Karoline Alvilde Tactical Gaming Solutions AS
-    </footer>
+    <script>
+        // Liten vits: Hvis de prøver å gå bort fra siden
+        window.onbeforeunload = function() {
+            return "HALLOOOO?! Du kan ikke dra nå!";
+        };
+    </script>
 
 </body>
 </html>
