@@ -3,189 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karoline "The Clutch" Alvilde | CS:GO Legend</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <title>KAROLINE ALVILDE | PRO GAMER & CS-IKON</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cs-orange: #de9b35;
-            --cs-blue: #5d79ae;
-            --dark-gray: #121417;
-            --danger: #ff4444;
+            --gold: #ffcc00;
+            --twitch-purple: #6441a5;
+            --dark-bg: #0d0d0d;
+            --red-alert: #ff0000;
         }
 
         body {
-            background-color: var(--dark-gray);
-            color: #e1e1e1;
-            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Hero Seksjon med Glitch */
-        .header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('karoline.png'); /* Offline screen som bakgrunn */
+        /* Hero / Header */
+        header {
+            height: 400px;
+            background: linear-gradient(0deg, var(--dark-bg) 0%, rgba(0,0,0,0.2) 100%), url('karoline.png');
             background-size: cover;
-            background-attachment: fixed;
-            height: 60vh;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-bottom: 4px solid var(--cs-orange);
+            text-align: center;
+            border-bottom: 2px solid #222;
         }
 
         h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            color: var(--cs-orange);
+            font-family: 'Oswald', sans-serif;
+            font-size: 5rem;
             margin: 0;
+            letter-spacing: -2px;
+            color: #fff;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            animation: hallo-pulse 1s infinite alternate;
         }
 
-        @keyframes hallo-pulse {
-            from { text-shadow: 0 0 10px #de9b35; }
-            to { text-shadow: 0 0 30px #de9b35, 0 0 40px #ff0000; }
-        }
-
-        .sub-tag {
-            font-size: 1.2rem;
-            background: var(--danger);
+        .professional-tag {
+            background: var(--gold);
+            color: #000;
             padding: 5px 20px;
-            transform: skewX(-20deg);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* Main Profile Layout */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 100px;
+            background: #151515;
+            padding: 40px;
+            border: 1px solid #333;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 50px;
+        }
+
+        .profile-pic {
+            width: 100%;
+            border: 5px solid #222;
+            filter: grayscale(0.3);
+        }
+
+        /* Ferdigheter (Ironic Stats) */
+        .skill-bar-container {
+            margin-top: 25px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #888;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #222;
+            width: 100%;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--gold);
+        }
+
+        /* Sosiale Medier Knapper */
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border: 1px solid #444;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .snap-btn {
+            background: #fffc00;
+            color: #000;
+            border: none;
+            grid-column: span 2;
+        }
+
+        /* Snapchat Overlay */
+        #snap-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fffc00;
+            color: #000;
+            z-index: 9999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #snap-overlay h2 {
+            font-size: 6rem;
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .close-snap {
+            margin-top: 50px;
+            cursor: pointer;
+            text-decoration: underline;
             font-weight: bold;
         }
 
-        .main-content {
-            max-width: 1000px;
-            margin: -50px auto 50px;
-            background: #1b1e23;
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .cs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .stat-box {
-            border: 1px solid #333;
-            padding: 20px;
-            background: #23272d;
-            position: relative;
-        }
-
-        .stat-box h3 {
-            color: var(--cs-orange);
-            margin-top: 0;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .highlight-box {
-            border-left: 5px solid var(--cs-blue);
-            padding-left: 20px;
-            margin: 20px 0;
-            font-style: italic;
-            background: rgba(93, 121, 174, 0.1);
-        }
-
-        .pro-player-card {
-            width: 100%;
-            border: 2px solid #de9b35;
-            filter: sepia(0.5) contrast(1.2);
-        }
-
-        /* Knapper */
-        .btn-container {
+        /* Interaction Buttons */
+        .action-btns {
             display: flex;
             gap: 10px;
             margin-top: 20px;
         }
 
-        .btn {
+        .act-btn {
             flex: 1;
-            padding: 15px;
-            text-align: center;
-            text-decoration: none;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
             font-weight: bold;
             text-transform: uppercase;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
         }
 
-        .btn-hallo { background: var(--cs-orange); color: black; }
-        .btn-hade { background: #333; color: white; }
-        .btn-hade:hover { background: var(--danger); }
+        .btn-hallo { background: #fff; color: #000; }
+        .btn-hade { background: var(--red-alert); color: #fff; }
 
-        .fake-news {
-            font-size: 0.7rem;
-            color: #555;
-            text-align: center;
-            margin-top: 40px;
-        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <p class="sub-tag">LIVE: MAJOR FINALS (NOT REALLY)</p>
+    <header>
+        <div class="professional-tag">Offisiell Athlete Profil</div>
         <h1>HALLOOOO!</h1>
+    </header>
+
+    <div class="container">
+        <div class="profile-grid">
+            <aside>
+                <img src="karoline1.png" alt="Proffen" class="profile-pic">
+                
+                <div class="action-btns">
+                    <button class="act-btn btn-hallo" onclick="alert('HALLOOOOOO?!')">Si Hallo</button>
+                    <button class="act-btn btn-hade" onclick="alert('Offline-skjerm aktivert på tull!')">Si Hade</button>
+                </div>
+
+                <div class="social-grid">
+                    <a href="https://www.instagram.com/karoline.alvilde" target="_blank" class="social-btn">Instagram</a>
+                    <a href="https://www.tiktok.com/@karolinealvildee" target="_blank" class="social-btn">TikTok</a>
+                    <button onclick="openSnap()" class="social-btn snap-btn">👻 SNAPCHAT (VIKTIG!)</button>
+                </div>
+            </aside>
+
+            <main>
+                <h2>Bli kjent med Karoline (28)</h2>
+                <p>
+                    Velkommen til min offisielle portal. Jeg er en profesjonell strateg som trives best i 
+                    høyintensive miljøer som <strong>Palia</strong>, <strong>Minecraft</strong> og <strong>Fortnite</strong>. 
+                    Mange kjenner meg for mine lynraske reflekser og evnen til å alltid finne veien (selv når jeg er helt borte).
+                </p>
+
+                <div class="skill-bar-container">
+                    <h3>Mine "Profesjonelle" Ferdigheter</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Retningssans i Minecraft</span> <span>2%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 2%;"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Tålmodighet med trollers</span> <span>0.01%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 1%;"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Presisjon med vannkanne (Palia)</span> <span>99%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 99%;"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Volum på "HALLOOOO"</span> <span>110%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 100%; background: red;"></div></div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; font-style: italic; color: #666;">
+                    "Jeg spiller kanskje ikke CS på heltid, men jeg har i det minste en AI-generert AK-47 på profilbildet mitt, og det er det som teller i e-sport-verdenen."
+                </p>
+            </main>
+        </div>
     </div>
 
-    <div class="main-content">
-        <div class="cs-grid">
-            <div>
-                <img src="karoline1.png" alt="CS GOAT" class="pro-player-card">
-                <div class="btn-container">
-                    <button class="btn btn-hallo" onclick="alert('HALLOOOOOO?! Hører du meg ikke?!')">SI HALLO</button>
-                    <button class="btn btn-hade" onclick="alert('Systemfeil: Tvangstanker aktivert. Kan ikke avslutte stream.')">SI HADE</button>
-                </div>
-            </div>
-
-            <div>
-                <h2>Spiller-profil: Karoline</h2>
-                <p><strong>Rolle:</strong> Entry Fragger / Golf-Sniper</p>
-                <div class="highlight-box">
-                    "Karoline er uten tvil min favoritt CS-streamer. Ingen andre klarer å holde et sikte så stødig mens de egentlig spiller Golf With Your Friends eller bygger et kjøkken i Palia."
-                </div>
-                
-                <div class="stat-box">
-                    <h3>Sesong Stats</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li>🎯 <strong>Headshot Rate:</strong> 100% (I Minecraft)</li>
-                        <li>⛳ <strong>Clutch Prosent:</strong> 0.02% (Når ballen er nær hullet)</li>
-                        <li>🔊 <strong>Desibel-nivå:</strong> Over smertegrensen</li>
-                        <li>🔫 <strong>Favorittvåpen:</strong> AI-generert AK / Vannkanne</li>
-                    </ul>
-                </div>
-
-                <p style="margin-top:20px;">
-                    Mange lurer på hvorfor Karoline viser "Offline"-skjermen midt i en runde. Ekspertene mener det er en taktisk genistrek for å forvirre motstanderne (og seerne) mens hun tar en Monster-pause.
-                </p>
-            </div>
+    <div id="snap-overlay">
+        <h2>HALLO??!</h2>
+        <p style="font-size: 2rem;">ADDER DU MEG PÅ SNAPCHAT NÅ??!</p>
+        <div style="background: #fff; padding: 20px; color: #000; font-weight: 900; font-size: 3rem; margin: 20px;">
+            karolinealvilde
         </div>
-
-        <div class="stat-box" style="margin-top: 30px; text-align: center;">
-            <h2 style="color: var(--cs-blue);">"SÅ FLINK DU ER I CS!"</h2>
-            <p>Akkurat nå dominerer hun lobbyen med taktisk golfball-plassering som ville gjort Astralis misunnelige.</p>
-        </div>
-
-        <div class="fake-news">
-            * Denne siden er sponset av Karolines manglende retningssans i Minecraft. <br>
-            * Advarsel: Ved å si "Hade" godtar du at streamen aldri faktisk slutter.
-        </div>
+        <p class="close-snap" onclick="closeSnap()">Greit da, jeg har adda deg (Lukk)</p>
     </div>
 
     <script>
-        // Liten vits: Hvis de prøver å gå bort fra siden
-        window.onbeforeunload = function() {
-            return "HALLOOOO?! Du kan ikke dra nå!";
-        };
+        function openSnap() {
+            document.getElementById('snap-overlay').style.display = 'flex';
+        }
+        function closeSnap() {
+            document.getElementById('snap-overlay').style.display = 'none';
+        }
     </script>
 
 </body>
